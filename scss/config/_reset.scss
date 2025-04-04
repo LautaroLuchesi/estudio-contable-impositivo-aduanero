@@ -1,0 +1,43 @@
+/* Reseteo base */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px; // Establece un tamaño base para la fuente, adecuado para la mayoría de los dispositivos.
+  
+  @media (max-width: 768px) {
+    font-size: 14px; // Ajuste de tamaño base para pantallas más pequeñas (móviles)
+  }
+}
+
+body {
+  font-family: $font-family;
+  line-height: 1.6;
+  color: $secondary-color;
+  background-color: #f4f4f4;
+  font-size: 1rem; // Asegura que el tamaño de fuente base esté bien ajustado
+}
+
+a {
+  text-decoration: none; // Elimina el subrayado predeterminado
+}
+
+ul, ol {
+  list-style: none; // Elimina los estilos de lista por defecto
+}
+
+button {
+  border: none; // Asegura que los botones no tengan bordes predeterminados
+  background: none; // Asegura que los botones no tengan fondo
+  cursor: pointer; // Establece el cursor pointer para botones
+}
+
+img {
+  max-width: 100%; // Asegura que las imágenes no desborden su contenedor
+  height: auto; // Mantiene la proporción de las imágenes
+}

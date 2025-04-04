@@ -1,0 +1,102 @@
+.navbar { 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $primary-color;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 6px 0; // Leve reducción para equilibrar el nuevo tamaño del logo
+  z-index: 1000;
+
+  .container {
+    @include center-flex;
+    justify-content: space-between;
+    padding: 0 15px; // Ajuste para móviles
+    
+    .logo {
+      font-size: 1.5rem; // Tamaño más adecuado para móviles
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    nav {
+      ul.nav-links {
+        display: flex;
+        list-style: none;
+        gap: 15px; // Reducir el espacio entre los enlaces
+        margin-right: 20px;
+
+        @media (max-width: 768px) {
+          display: none; // Ocultar en móviles y activar con JS
+          flex-direction: column;
+          background-color: $primary-color;
+          position: absolute;
+          top: 60px;
+          left: 0;
+          width: 100%;
+          padding: 10px;
+          gap: 10px; // Reducir el espacio entre los elementos del menú
+        }
+
+        li {
+          a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem; // Reducir en móviles
+            &:hover {
+              color: $accent-color;
+            }
+          }
+        }
+      }
+    }
+
+    // Menú hamburguesa
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 2rem;
+      color: #fff;
+
+      @media (max-width: 768px) {
+        display: block;
+      }
+    }
+  }
+}
+
+// Ajuste para el logo en dispositivos móviles
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  img {
+    width: 58px; // Aumentado ligeramente para mayor presencia
+    height: auto;
+  }
+}
+
+
+// Estilos generales
+body {
+  font-family: 'Lora', serif;
+  color: $text-color;
+}
+
+h1, h2, h3 {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+}
+
+p, li {
+  font-family: 'Lora', serif;
+  font-weight: 400;
+}
+
+.btn {
+  font-family: 'Merriweather', serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+

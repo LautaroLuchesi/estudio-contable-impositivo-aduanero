@@ -1,0 +1,32 @@
+footer {
+  background-color: $primary-color;
+  padding: 30px 20px;
+  text-align: center;
+
+  .footer-info {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: $text-color;
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem; // Ajuste para móviles
+      margin-bottom: 10px; // Reducir margen en móviles
+    }
+  }
+
+  .footer-rights {
+    font-size: 0.9rem;
+    color: darken($text-color, 20%);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 10px;
+
+    @media (max-width: 768px) {
+      font-size: 0.8rem; // Reducir tamaño de fuente en móviles
+      padding-top: 8px; // Reducir el espacio en móviles
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px 15px; // Reducir padding en dispositivos pequeños
+  }
+}
