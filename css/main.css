@@ -53,11 +53,23 @@ img {
   padding: 6px 0;
   z-index: 1000;
 }
+.navbar h1 {
+  font-size: 1.6rem;
+}
+@media (max-width: 768px) {
+  .navbar h1 {
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+  }
+}
 .navbar .container {
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   padding: 0 15px;
 }
 .navbar .container .logo {
@@ -69,7 +81,7 @@ img {
   display: flex;
   list-style: none;
   gap: 15px;
-  margin-right: 20px;
+  margin: 0;
 }
 @media (max-width: 768px) {
   .navbar .container nav ul.nav-links {
@@ -83,7 +95,6 @@ img {
     transition: max-height 0.3s ease, padding 0.3s ease;
     overflow: hidden;
     max-height: 0;
-    gap: 10px;
     z-index: 999;
   }
   .navbar .container nav ul.nav-links.active {
@@ -91,22 +102,22 @@ img {
     padding: 15px 10px;
   }
 }
-.navbar .container nav li a {
+.navbar .container nav ul.nav-links li a {
   color: #fff;
   text-decoration: none;
   font-size: 1rem;
 }
-.navbar .container nav li a:hover {
+.navbar .container nav ul.nav-links li a:hover {
   color: #ee9b00;
 }
-.navbar .menu-toggle {
+.navbar .container .menu-toggle {
   display: none;
   cursor: pointer;
   font-size: 2rem;
   color: #fff;
 }
 @media (max-width: 768px) {
-  .navbar .menu-toggle {
+  .navbar .container .menu-toggle {
     display: block;
   }
 }
