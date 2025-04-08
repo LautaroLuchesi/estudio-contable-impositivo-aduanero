@@ -65,7 +65,7 @@
     }
   }
 }
-
+ 
 .hero .container {
   position: relative;
   padding-left: 0;
@@ -79,7 +79,7 @@
 
   h2 {
     font-size: 2.5rem;
-    
+    color: $secondary-color;
     margin-bottom: 20px;
   }
 
@@ -296,5 +296,10 @@
       max-width: 100%;
       padding: 0 10px;
     }
+  }
+}
+.container{
+  h2{
+    color: $secondary-color;
   }
 }
