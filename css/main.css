@@ -179,6 +179,12 @@ p, li {
   height: auto;
   display: block;
 }
+@media (max-width: 768px) {
+  .hero .logo-separado {
+    position: static;
+    margin: 0 0 15px 0;
+  }
+}
 .hero .eslogan {
   flex: 1;
   text-align: center;
@@ -207,21 +213,6 @@ p, li {
   position: relative;
   padding-left: 0;
   padding-right: 0;
-}
-
-.hero-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-.hero-content .logo-separado {
-  position: absolute;
-  left: 0;
-}
-.hero-content .eslogan {
-  margin: 0 auto;
-  max-width: 600px;
 }
 
 .services {
