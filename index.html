@@ -31,33 +31,41 @@
     </head>
     
 <body>
-    <header class="navbar"> 
+    <header class="navbar">
         <div class="container">
-            <div class="logo-container">
-                <img src="imagenes/logo.jpg" alt="Logo Estudio Contable">
-                <h1 class="logo">Estudio Contable Impositivo Lobatto Kozma</h1>
-            </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#nosotros">Nosotros</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </nav>
+          <!-- Texto que representa el nombre del estudio -->
+          <h1 class="logo">Estudio Contable Impositivo y Aduanero</h1>
+      
+          <!-- Botón hamburguesa solo en móviles -->
+          <div class="menu-toggle" id="menu-toggle">☰</div>
+      
+          <!-- Menú de navegación -->
+          <nav>
+            <ul class="nav-links">
+              <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#servicios">Servicios</a></li>
+              <li><a href="#nosotros">Nosotros</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+            </ul>
+          </nav>
         </div>
-    </header>
+      </header>
+      
+      
     
     <section id="inicio" class="hero">
         <div class="container">
-            <Div class="eslogan">
+            <div class="logo-separado">
+                <img src="imagenes/logo.jpg" alt="Logo Estudio Contable">
+            </div>
+            <div class="eslogan">
                 <h2>Soluciones Contables Profesionales</h2>
-            </Div>
-           <p>Asesoría integral para empresas y emprendedores.</p>
-            <a href="#contacto" class="btn">Consulta Gratis</a>
+                <p>Asesoría integral para empresas y emprendedores.</p>
+                <a href="#contacto" class="btn">Consulta Gratis</a>
+            </div>
         </div>
     </section>
-    
+      
     <section id="servicios" class="services">
         <div class="container">
             <h2>Nuestros Servicios</h2>
@@ -149,7 +157,20 @@
           </form>
         </div>
       </section>
-      
+      <script>
+        const toggle = document.getElementById("menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
+    
+        toggle.addEventListener("click", function () {
+          navLinks.classList.toggle("active");
+        });
+    
+        document.querySelectorAll(".nav-links a").forEach(link => {
+          link.addEventListener("click", () => {
+            navLinks.classList.remove("active");
+          });
+        });
+      </script>
       <script>
         document.getElementById("whatsapp-form").addEventListener("submit", function(e) {
           e.preventDefault();

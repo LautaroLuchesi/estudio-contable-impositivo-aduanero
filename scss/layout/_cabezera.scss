@@ -1,20 +1,20 @@
-.navbar { 
+.navbar {  
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background-color: $primary-color;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 6px 0; // Leve reducción para equilibrar el nuevo tamaño del logo
+  padding: 6px 0;
   z-index: 1000;
 
   .container {
     @include center-flex;
     justify-content: space-between;
-    padding: 0 15px; // Ajuste para móviles
-    
+    padding: 0 15px;
+
     .logo {
-      font-size: 1.5rem; // Tamaño más adecuado para móviles
+      font-size: 1.5rem;
       color: #fff;
       text-transform: uppercase;
     }
@@ -23,26 +23,35 @@
       ul.nav-links {
         display: flex;
         list-style: none;
-        gap: 15px; // Reducir el espacio entre los enlaces
+        gap: 15px;
         margin-right: 20px;
 
         @media (max-width: 768px) {
-          display: none; // Ocultar en móviles y activar con JS
           flex-direction: column;
           background-color: $primary-color;
           position: absolute;
           top: 60px;
           left: 0;
           width: 100%;
-          padding: 10px;
-          gap: 10px; // Reducir el espacio entre los elementos del menú
+          padding: 0;
+          transition: max-height 0.3s ease, padding 0.3s ease;
+          overflow: hidden;
+          max-height: 0; // Oculto por defecto
+          gap: 10px;
+          z-index: 999;
+      
+          &.active {
+            max-height: 500px;
+            padding: 15px 10px;
+          }
         }
-
+      }
+      
         li {
           a {
             color: #fff;
             text-decoration: none;
-            font-size: 1rem; // Reducir en móviles
+            font-size: 1rem;
             &:hover {
               color: $accent-color;
             }
@@ -51,7 +60,6 @@
       }
     }
 
-    // Menú hamburguesa
     .menu-toggle {
       display: none;
       cursor: pointer;
@@ -63,20 +71,35 @@
       }
     }
   }
-}
 
-// Ajuste para el logo en dispositivos móviles
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+// Ya no se usa porque el logo fue movido
+// .logo-container {
+//   display: flex;
+//   align-items: center;
+//   gap: 10px;
+
+//   img {
+//     width: 58px;
+//     height: auto;
+//   }
+// }
+
+// Nuevo logo separado dentro del hero
+.logo-separado {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  max-width: 150px;
 
   img {
-    width: 58px; // Aumentado ligeramente para mayor presencia
+    width: 100%;
     height: auto;
   }
 }
 
+.hero .container {
+  position: relative; // Para que .logo-separado se posicione dentro
+}
 
 // Estilos generales
 body {
@@ -99,4 +122,3 @@ p, li {
   font-weight: 600;
   text-transform: uppercase;
 }
-

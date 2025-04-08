@@ -2,11 +2,12 @@
 .hero {
   background: $primary-color;
   color: white;
-  padding: 60px 20px;
+  padding: 100px 20px 60px; // 👈 Le agregamos padding-top más grande para evitar que lo tape el navbar
   text-align: center;
+  position: relative; // Necesario para posicionar el logo abajo a la izquierda
 
   h2 {
-    font-size: 2.5rem; // Ajustado para dispositivos grandes
+    font-size: 2.5rem;
   }
 
   p {
@@ -20,7 +21,7 @@
   }
 
   @media (max-width: 768px) {
-    padding: 40px 15px;
+    padding: 130px 15px 60px; // 👈 Más padding-top en mobile si el navbar ocupa más espacio
     h2 {
       font-size: 1.8rem;
     }
@@ -29,6 +30,7 @@
     }
   }
 }
+
 .container {
   h2{
     color: $secondary-color;
@@ -192,22 +194,18 @@
     }
   }
 }
-
 // Contact Section
 .contact {
   background: linear-gradient(to bottom, #ffffff, #f2f2f2);
   padding: 20px 20px 40px; // Top padding ajustado
   text-align: center;
-
   h2 {
     font-size: 2rem;
   }
-
   p {
     font-size: 1.2rem;
     margin-bottom: 15px;
   }
-
   form {
     display: flex;
     flex-direction: column;
@@ -215,7 +213,6 @@
     max-width: 500px;
     margin: 0 auto 20px;
   }
-
   input, textarea {
     width: 100%;
     padding: 10px;
@@ -223,12 +220,10 @@
     border-radius: 5px;
     font-size: 1rem;
   }
-
   textarea {
     height: 120px;
     resize: none;
   }
-
   .btn {
     background-color: #25d366;
     color: white;
@@ -238,26 +233,27 @@
     font-size: 1rem;
     display: inline-flex;
     align-items: center;
+    justify-content: center; // 👈 Esta línea centra el icono y el texto
     gap: 8px;
     cursor: pointer;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-
+  
     svg {
       transition: transform 0.3s ease;
     }
-
+  
     &:hover {
       background-color: darken(#25d366, 10%);
       transform: translateY(-2px);
       box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
-
+  
       svg {
         transform: scale(1.15);
       }
     }
   }
-
+  
   @media (max-width: 768px) {
     padding: 25px 15px 35px;
 
