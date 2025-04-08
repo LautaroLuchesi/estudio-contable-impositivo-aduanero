@@ -1,49 +1,87 @@
-// Hero Section
 .hero {
-  background: $primary-color;
-  color: white;
-  padding: 100px 20px 60px; // 👈 Le agregamos padding-top más grande para evitar que lo tape el navbar
-  text-align: center;
-  position: relative; // Necesario para posicionar el logo abajo a la izquierda
+  background-color: $primary-color;
+  color: #fff;
+  padding: 100px 20px 60px; // espacio arriba para que no lo tape el navbar
 
-  h2 {
-    font-size: 2.5rem;
+  @media (min-width: 769px) {
+    padding: 80px 20px 40px; // menos en PC pero sigue protegido del navbar
   }
 
-  p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+  .hero-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      text-align: center;
+    }
   }
 
-  .btn {
-    @include button-styles($accent-color, white);
-    margin-top: 20px;
+  .logo-separado {
+    flex: 0 0 auto;
+    margin-left: -15px; // empujamos más a la izquierda
+
+    img {
+      width: 120px;
+      height: auto;
+      display: block;
+    }
   }
 
-  @media (max-width: 768px) {
-    padding: 130px 15px 60px; // 👈 Más padding-top en mobile si el navbar ocupa más espacio
+  .eslogan {
+    flex: 1;
+    text-align: center;
+
     h2 {
-      font-size: 1.8rem;
+      font-size: 2rem;
+      margin-bottom: 10px;
     }
+
     p {
-      font-size: 1rem;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
     }
+
+    .btn {
+      background-color: $accent-color;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+
+      &:hover {
+        background-color: darken($accent-color, 10%);
+      }
+    }
+  }
+}
+.hero .container {
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+}
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  .logo-separado {
+    position: absolute;
+    left: 0;
+  }
+
+  .eslogan {
+    margin: 0 auto;
+    max-width: 600px;
   }
 }
 
-.container {
-  h2{
-    color: $secondary-color;
-  }
-  p{
-    color: #fff;
-  }
-}
-.eslogan{
-  h2{
-    color: #fff;
-  }
-}
 // Sección de Servicios
 .services {
   background-color: white;

@@ -2,7 +2,12 @@ footer {
   background-color: $primary-color;
   padding: 30px 20px;
   text-align: center;
+  background-color: $primary-color; // si ya lo tenías
+  color: #fff;
 
+  h1, h2, h3, a, p, span {
+    color: #fff !important;
+  }
   .footer-info {
     margin-bottom: 15px;
     font-size: 1rem;

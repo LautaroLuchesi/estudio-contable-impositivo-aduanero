@@ -43,6 +43,14 @@ img {
   height: auto;
 }
 
+header {
+  background-color: #005f73;
+  color: #fff;
+}
+header h1, header h2, header h3, header a, header p, header span {
+  color: #fff !important;
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -117,23 +125,6 @@ img {
   }
 }
 
-.logo-separado {
-  max-width: 150px;
-  margin-bottom: 15px;
-}
-.logo-separado img {
-  width: 100%;
-  height: auto;
-}
-@media (max-width: 768px) {
-  .logo-separado {
-    margin: 0 auto 15px;
-    display: flex;
-    justify-content: center;
-    max-width: 100px;
-  }
-}
-
 body {
   font-family: "Lora", serif;
   color: #333;
@@ -156,53 +147,81 @@ p, li {
 }
 
 .hero {
-  background: #005f73;
-  color: white;
+  background-color: #005f73;
+  color: #fff;
   padding: 100px 20px 60px;
+}
+@media (min-width: 769px) {
+  .hero {
+    padding: 80px 20px 40px;
+  }
+}
+.hero .hero-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+@media (max-width: 768px) {
+  .hero .hero-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.hero .logo-separado {
+  flex: 0 0 auto;
+  margin-left: -15px;
+}
+.hero .logo-separado img {
+  width: 120px;
+  height: auto;
+  display: block;
+}
+.hero .eslogan {
+  flex: 1;
   text-align: center;
-  position: relative;
 }
-.hero h2 {
-  font-size: 2.5rem;
+.hero .eslogan h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
-.hero p {
-  font-size: 1.2rem;
+.hero .eslogan p {
+  font-size: 1.1rem;
   margin-bottom: 20px;
 }
-.hero .btn {
+.hero .eslogan .btn {
   background-color: #ee9b00;
   color: white;
   padding: 10px 20px;
-  border: none;
   border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 20px;
+  text-decoration: none;
+  font-weight: bold;
 }
-.hero .btn:hover {
+.hero .eslogan .btn:hover {
   background-color: rgb(187, 121.7857142857, 0);
 }
-@media (max-width: 768px) {
-  .hero {
-    padding: 130px 15px 60px;
-  }
-  .hero h2 {
-    font-size: 1.8rem;
-  }
-  .hero p {
-    font-size: 1rem;
-  }
+
+.hero .container {
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
 }
 
-.container h2 {
-  color: #0a9396;
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
-.container p {
-  color: #fff;
+.hero-content .logo-separado {
+  position: absolute;
+  left: 0;
 }
-
-.eslogan h2 {
-  color: #fff;
+.hero-content .eslogan {
+  margin: 0 auto;
+  max-width: 600px;
 }
 
 .services {
@@ -418,6 +437,11 @@ footer {
   background-color: #005f73;
   padding: 30px 20px;
   text-align: center;
+  background-color: #005f73;
+  color: #fff;
+}
+footer h1, footer h2, footer h3, footer a, footer p, footer span {
+  color: #fff !important;
 }
 footer .footer-info {
   margin-bottom: 15px;
