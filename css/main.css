@@ -72,11 +72,6 @@ img {
   flex-wrap: wrap;
   padding: 0 15px;
 }
-.navbar .container .logo {
-  font-size: 1.5rem;
-  color: #fff;
-  text-transform: uppercase;
-}
 .navbar .container nav ul.nav-links {
   display: flex;
   list-style: none;
@@ -123,18 +118,20 @@ img {
 }
 
 .logo-separado {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
   max-width: 150px;
+  margin-bottom: 15px;
 }
 .logo-separado img {
   width: 100%;
   height: auto;
 }
-
-.hero .container {
-  position: relative;
+@media (max-width: 768px) {
+  .logo-separado {
+    margin: 0 auto 15px;
+    display: flex;
+    justify-content: center;
+    max-width: 100px;
+  }
 }
 
 body {

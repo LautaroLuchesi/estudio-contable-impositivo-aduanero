@@ -24,13 +24,6 @@
     align-items: center;
     flex-wrap: wrap;
     padding: 0 15px;
-
-    .logo {
-      font-size: 1.5rem;
-      color: #fff;
-      text-transform: uppercase;
-    }
-
     nav {
       ul.nav-links {
         display: flex;
@@ -83,37 +76,22 @@
     }
   }
 }
-
-
-// Ya no se usa porque el logo fue movido
-// .logo-container {
-//   display: flex;
-//   align-items: center;
-//   gap: 10px;
-
-//   img {
-//     width: 58px;
-//     height: auto;
-//   }
-// }
-
-// Nuevo logo separado dentro del hero
 .logo-separado {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
   max-width: 150px;
+  margin-bottom: 15px;
 
   img {
     width: 100%;
     height: auto;
   }
-}
 
-.hero .container {
-  position: relative; // Para que .logo-separado se posicione dentro
+  @media (max-width: 768px) {
+    margin: 0 auto 15px;
+    display: flex;
+    justify-content: center;
+    max-width: 100px;
+  }
 }
-
 // Estilos generales
 body {
   font-family: 'Lora', serif;
